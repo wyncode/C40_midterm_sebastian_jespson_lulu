@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AppContextProvider } from './context/AppContext';
 import ContextDemo from './components/ContextDemo';
-import Navbar from './components/HOMEPAGE/Navbar/Navbar';
+import Navbar from './components/Navbar/Navbar';
 
 import './App.css';
 
