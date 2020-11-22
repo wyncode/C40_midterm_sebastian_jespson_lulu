@@ -26,5 +26,7 @@
     "dev": "concurrently --kill-others-on-fail \"yarn run server\" \"yarn run client\"",
     "heroku-postbuild": "cd client && yarn && yarn run build",
     "prettify": "prettier '*/**/*.js' '*/**/*.jsx' '*/**/*.html' '*/**/*.css' --write"
-  }
+  },
+  "repository": "git@github.com:wyncode/C40_midterm_sebastian_jespson_lulu.git",
+  "author": "Jespson Saint-Pierre <jespstpierre@yahoo.com>"
 }
