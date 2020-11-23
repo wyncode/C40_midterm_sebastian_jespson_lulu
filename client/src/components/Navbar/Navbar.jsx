@@ -21,10 +21,10 @@ const Navbar = () => {
           <Route exact path="/">
             Home
           </Route>
-          <Route exact path="/">
+          <Route exact path="">
             About
           </Route>
-          <Route exact path="/">
+          <Route exact path="/team">
             Team
           </Route>
         </Switch>
