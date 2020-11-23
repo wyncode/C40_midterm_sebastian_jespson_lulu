@@ -5,12 +5,22 @@ if (process.env.NODE_ENV !== 'production') {
 const express = require('express');
 const path = require('path');
 const app = express();
+const axios = require('axios');
 
 // JUST FOR DEMO PURPOSES, PUT YOUR ACTUAL API CODE HERE
-app.get('/api/demo', (request, response) => {
-  response.json({
-    message: 'Hello from server.js'
-  });
+app.get('/charitysearch', async (req, res) => {
+  try {
+    let response = await axios.get(
+      `https://api.data.charitynavigator.org/v2/Organizations?app_id=${process.env.APP_ID}&app_key=${process.env.APP_KEY}&search=children&state=FL&city=North%20Miami`
+    );
+    res.json(response.data);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+app.get('/mapboxapi', (req, res) => {
+  axios.get();
 });
 // END DEMO
 
