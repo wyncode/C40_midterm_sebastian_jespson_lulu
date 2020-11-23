@@ -18,7 +18,15 @@ const Navbar = () => {
         </ul>
 
         <Switch>
-          <Route exact path="/"></Route>
+          <Route exact path="/">
+            Home
+          </Route>
+          <Route exact path="/">
+            About
+          </Route>
+          <Route exact path="/">
+            Team
+          </Route>
         </Switch>
       </div>
     </Router>
