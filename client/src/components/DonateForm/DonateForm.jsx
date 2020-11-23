@@ -1,16 +1,26 @@
 import React from 'react';
-import './DonateForm.css';
-import useForm from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 
-export default function DonateForm() {
+function DonateForm() {
   const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    //code here what to do with data
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <input type="text" ref={register} />
+      <input
+        type="text"
+        id="county"
+        name="county"
+        ref={register({ required: 'COUNTY REQUIRED EX: North Miami' })}
+      />
+      <br></br>
+      {errors.county && <p>{errors.county.message}</p>}
+      <br></br>
+      <input type="submit" id="submit" />
     </form>
   );
 }
+
+export default DonateForm;

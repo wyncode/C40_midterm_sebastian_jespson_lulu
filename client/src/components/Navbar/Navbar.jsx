@@ -1,5 +1,7 @@
 import React from 'react';
 import './Navbar.css';
+import About from '../About/About';
+
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 const Navbar = () => {
   return (
@@ -21,7 +23,7 @@ const Navbar = () => {
           <Route exact path="/">
             Home
           </Route>
-          <Route exact path="">
+          <Route exact path="../">
             About
           </Route>
           <Route exact path="/team">
