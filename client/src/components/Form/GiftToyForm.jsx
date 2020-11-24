@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+
 function GiftToyForm() {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data) => {
@@ -7,23 +8,6 @@ function GiftToyForm() {
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <input
-        type="text"
-        id="state"
-        name="state"
-        ref={register({ required: 'STATE REQUIRED' })}
-      />
-      <br></br>
-      {errors.state && <p>{errors.state.message}</p>}
-      <br></br>
-      <input
-        type="text"
-        id="county"
-        name="county"
-        ref={register({ required: 'COUNTY REQUIRED' })}
-      />
-      <br></br>
-      {errors.county && <p>{errors.county.message}</p>}
       <br></br>
       <input
         type="text"
