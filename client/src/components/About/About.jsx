@@ -3,7 +3,7 @@ import './About.css';
 
 const About = () => {
   return (
-    <div>
+    <div className="about">
       <h1>About Us</h1>
       <p>
         At the beginning of 2020, Santa’s Elves got stranded in the North Pole.
