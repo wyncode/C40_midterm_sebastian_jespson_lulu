@@ -1,28 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import { AppContextProvider } from './context/AppContext';
-import ContextDemo from './components/ContextDemo';
+import React from 'react';
+// import Map from './components/Map/map';
+// import DonateForm from './components/Form/DonateForm';
+import Home from './components/Home/Home';
+import Navbar from './components/Navbar/Navbar';
+import About from './components/About/About';
+import Team from './components/Team/Team';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './App.css';
 
 const App = () => {
-  const [serverMessage, setServerMessage] = useState('');
-
-  const fetchDemoData = () => {
-    fetch('/api/demo')
-      .then((response) => response.json())
-      .then((data) => setServerMessage(data.message));
-  };
-
-  useEffect(fetchDemoData, []);
-
   return (
-    <AppContextProvider>
-      <div id="demo">
-        <h3>Hello from client/src/App.js</h3>
-        <ContextDemo />
-        <h3>{serverMessage}</h3>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/team" component={Team} />
+        </Switch>
       </div>
-    </AppContextProvider>
+    </Router>
   );
 };
 
