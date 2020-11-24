@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import './Form.css';
 
 function DonateForm() {
   const [charities, setCharities] = useState([]);
@@ -20,7 +21,7 @@ function DonateForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className="form">
       <input
         type="text"
         id="county"
