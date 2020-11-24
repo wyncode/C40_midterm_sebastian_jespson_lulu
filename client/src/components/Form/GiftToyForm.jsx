@@ -11,24 +11,6 @@ function GiftToyForm() {
     <form onSubmit={handleSubmit(onSubmit)} className="form">
       <input
         type="text"
-        id="state"
-        name="state"
-        ref={register({ required: 'STATE REQUIRED' })}
-      />
-      <br></br>
-      {errors.state && <p>{errors.state.message}</p>}
-      <br></br>
-      <input
-        type="text"
-        id="county"
-        name="county"
-        ref={register({ required: 'COUNTY REQUIRED' })}
-      />
-      <br></br>
-      {errors.county && <p>{errors.county.message}</p>}
-      <br></br>
-      <input
-        type="text"
         id="zipcode"
         name="zipcode"
         ref={register({
