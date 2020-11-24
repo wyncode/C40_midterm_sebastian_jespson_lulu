@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { AppContext } from '../../context/AppContext';
 import { useHistory } from 'react-router-dom';
+import './Form.css';
 
 function DonateForm() {
   const history = useHistory();
@@ -36,7 +37,7 @@ function DonateForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
     searchApi();
-    history.push('/showcase');
+    history.push('/donateResult');
   };
 
   const stateChange = (event) => {

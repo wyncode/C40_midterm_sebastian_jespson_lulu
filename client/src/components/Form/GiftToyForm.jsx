@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import './Form.css';
 
 function GiftToyForm() {
   const { register, handleSubmit, errors } = useForm();
@@ -7,8 +8,7 @@ function GiftToyForm() {
     //code here what to do with data
   };
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <br></br>
+    <form onSubmit={handleSubmit(onSubmit)} className="form">
       <input
         type="text"
         id="zipcode"
