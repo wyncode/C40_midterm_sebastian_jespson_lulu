@@ -9,9 +9,10 @@ import Map from './Map/map';
 //item.mailingAddress.stateOrProvince
 //item.mailingAddress.postalCode
 
-const Showcase = () => {
+const DonateResult = () => {
   const { charities } = useContext(AppContext);
-
+  console.log('object');
+  console.log(charities);
   const [address, setAddress] = useState();
 
   if (!charities) return null;
@@ -36,4 +37,4 @@ const Showcase = () => {
   );
 };
 
-export default Showcase;
+export default DonateResult;

@@ -27,7 +27,8 @@ function DonateForm() {
           return charity;
         })
       );
-
+      console.log('here');
+      console.log(getGeo);
       setCharities(getGeo);
     } catch (error) {
       console.log(error);
@@ -40,11 +41,11 @@ function DonateForm() {
     history.push('/donateResult');
   };
 
-  const stateChange = (event) => {
-    setState(event.target.value);
-  };
   const cityChange = (event) => {
     setCity(event.target.value);
+  };
+  const stateChange = (event) => {
+    setState(event.target.value);
   };
   const zipChange = (event) => {
     setZip(event.target.value);
