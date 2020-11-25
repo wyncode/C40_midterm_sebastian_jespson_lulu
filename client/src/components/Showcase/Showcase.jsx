@@ -9,7 +9,6 @@ export default function Showcase() {
         A place for helpers to gift a brand new, unused toy or donate to the
         charity closest to you
       </p>
-       
     </div>
   );
 }
