@@ -6,6 +6,7 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-hook-form": "^6.11.5",
+    "react-icons": "^3.11.0",
     "react-map-gl": "^5.2.10",
     "react-map-gl-directions": "^1.0.4",
     "react-map-gl-geocoder": "^2.1.6",

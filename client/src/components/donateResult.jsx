@@ -18,7 +18,7 @@ const DonateResult = () => {
   return (
     <div>
       {charities &&
-        charities.map((charity) => {
+        charities?.map((charity) => {
           console.log(charity);
           return (
             <div key={charity.ein}>

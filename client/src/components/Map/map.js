@@ -4,7 +4,8 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 //this get's the search bar
 import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import React, { useState, useRef, useCallback, useContext } from 'react';
-import ReactMapGL, { GeolocateControl } from 'react-map-gl';
+import ReactMapGL, { GeolocateControl, Marker } from 'react-map-gl';
+import { FiFlag } from 'react-icons/fi';
 import Geocoder from 'react-map-gl-geocoder';
 import Directions from 'react-map-gl-directions';
 import { AppContext } from '../../context/AppContext';
@@ -15,8 +16,8 @@ const Map = () => {
   const { charities } = useContext(AppContext);
   //set the state and the viewport to change
   const [viewport, setViewport] = useState({
-    latitude: 37.7577,
-    longitude: -122.4376,
+    latitude: 25.7617,
+    longitude: -80.1918,
     zoom: 8
   });
 
@@ -86,6 +87,12 @@ const Map = () => {
           placeholderDestination="Your Destination"
           position="top-left"
         />
+        {exampleArray.map((location) => (
+          <Marker latitude={location.latitude} longitude={location.longitude}>
+            <FiFlag style={{ color: 'red' }} />
+            {/* <img src="https://amigosforkids.org/wp-content/themes/amigos2018/img/general/logo-color.png" alt="marker" /> */}
+          </Marker>
+        ))}
       </ReactMapGL>
     </div>
   );
