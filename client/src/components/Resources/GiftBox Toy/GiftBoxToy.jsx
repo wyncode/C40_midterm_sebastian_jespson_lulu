@@ -5,9 +5,7 @@ const GiftBoxToy = () => {
   return (
     <div className="row">
       <div className="col-12">
-        <h3 className="text-center text-light my-5">
-          <strong>Hover the box</strong>
-        </h3>
+        <h3 className="text-center text-light my-5"></h3>
       </div>
       <div className="col-12 mt-5 d-flex justify-content-center">
         <div className="box">

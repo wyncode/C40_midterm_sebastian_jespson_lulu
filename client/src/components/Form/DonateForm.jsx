@@ -52,6 +52,7 @@ function DonateForm() {
 
   return (
     <div>
+      <p>Make a charitable contribution</p>
       <GiftBoxToy />
       <form onSubmit={handleSubmit}>
         <input

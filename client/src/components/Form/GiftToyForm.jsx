@@ -20,6 +20,7 @@ function GiftToyForm({ history }) {
   };
   return (
     <div>
+      <p>Gift a Toy</p>
       <GiftBoxToy />
       <form onSubmit={handleSubmit} className="form">
         <input

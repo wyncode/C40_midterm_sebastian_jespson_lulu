@@ -6,8 +6,8 @@ body {
 }
 .box::before {
   content: '';
-  width: 440px;
-  height: 440px;
+  width: 330px;
+  height: 330px;
   background-color: #89cff0;
   position: absolute;
   z-index: -1;
@@ -21,7 +21,7 @@ body {
   position: relative;
   height: 200px;
   width: 200px;
-  margin-top: 123.3333333333px;
+  margin-top: 139.333333px;
   background-color: #cc231e;
   border-bottom-left-radius: 5%;
   border-bottom-right-radius: 5%;
@@ -30,7 +30,7 @@ body {
 }
 .box-body .img {
   opacity: 0;
-  ransform: translateY(0%);
+  transform: translateY(0%);
   transition: all 0.5s;
   margin: 0 auto;
   display: block;
