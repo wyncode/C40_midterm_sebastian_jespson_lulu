@@ -8,7 +8,7 @@ import About from './components/About/About';
 import Team from './components/Team/Team';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
-import DonateResult from './components/DonateResult';
+import DonateResult from './components/donateResult';
 import { AppContextProvider } from './context/AppContext';
 import allForms from './components/Form/allForms';
 const App = () => {
