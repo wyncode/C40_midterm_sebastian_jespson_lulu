@@ -10,15 +10,20 @@ const Navbar = () => {
   return (
     <div>
       <ul className="navbar">
-        <Link style={navStyle} to="/">
+        {/* <Link style={navStyle} to="/">
           <li>Home</li>
-        </Link>
-        <Link style={navStyle} to="/about">
+        </Link> */}
+        <a href="/">
+          <li>Home</li>
+        </a>
+        {/* <Link style={navStyle} to="/about">
           <li>About</li>
-        </Link>
-        <Link style={navStyle} to="/team">
+        </Link> */}
+        <a href="/about">About</a>
+        {/* <Link style={navStyle} to="/team">
           <li>Team</li>
-        </Link>
+        </Link> */}
+        <a href="/team">Team</a>
       </ul>
     </div>
   );

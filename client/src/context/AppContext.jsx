@@ -4,7 +4,7 @@ export const AppContext = createContext();
 
 export const AppContextProvider = ({ children }) => {
   const [contextMessage, setContextMessage] = useState('');
-  const [charities, setCharities] = useState();
+  const [charities, setCharities] = useState([]);
   const contextMethod = () => {
     setContextMessage('Hello from client/src/context/AppContext.jsx');
   };
