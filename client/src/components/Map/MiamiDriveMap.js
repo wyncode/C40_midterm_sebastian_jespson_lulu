@@ -4,11 +4,13 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 //this get's the search bar
 import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import React, { useState, useRef, useCallback, useContext } from 'react';
-import ReactMapGL, { GeolocateControl } from 'react-map-gl';
+import ReactMapGL, { GeolocateControl, Marker } from 'react-map-gl';
+import { FiFlag } from 'react-icons/fi';
 import Directions from 'react-map-gl-directions';
 import { AppContext } from '../../context/AppContext';
 
-const { REACT_APP_MY_ENV, NODE_ENV } = process.env;
+const MAPBOX_TOKEN =
+  'pk.eyJ1IjoiamVzcDk2IiwiYSI6ImNraHJ2b3R1NzA3MGkyd210NHQ0MTljaW0ifQ.qq4toWUDIFOZsw9xSf-6-g';
 
 const miamiToyArray = [
   {
@@ -37,8 +39,8 @@ const Map = () => {
   const { charities } = useContext(AppContext);
   //set the state and the viewport to change
   const [viewport, setViewport] = useState({
-    latitude: 37.7577,
-    longitude: -122.4376,
+    latitude: 25.7617,
+    longitude: -80.1918,
     zoom: 8
   });
 

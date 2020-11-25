@@ -4,13 +4,13 @@ import './Form.css';
 import GiftBoxToy from '../Resources/GiftBox Toy/GiftBoxToy';
 import { withRouter } from 'react-router-dom';
 
-function GiftToyForm(history) {
+function GiftToyForm({ history }) {
   const [zip, setZip] = useState('');
   const { register, errors } = useForm();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    history.push('/signup');
+    history.push('/giftresult');
   };
   const zipChange = (event) => {
     setZip(event.target.value);

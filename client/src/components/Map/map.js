@@ -10,7 +10,8 @@ import Geocoder from 'react-map-gl-geocoder';
 import Directions from 'react-map-gl-directions';
 import { AppContext } from '../../context/AppContext';
 
-const { REACT_APP_MY_ENV_MAPBOX_TOKEN, NODE_ENV } = process.env;
+const MAPBOX_TOKEN =
+  'pk.eyJ1IjoiamVzcDk2IiwiYSI6ImNraHJ2b3R1NzA3MGkyd210NHQ0MTljaW0ifQ.qq4toWUDIFOZsw9xSf-6-g';
 
 const Map = () => {
   const { charities } = useContext(AppContext);
@@ -74,7 +75,7 @@ const Map = () => {
         width="50%"
         height="75%"
         onViewportChange={handleViewportChange}
-        mapboxApiAccessToken={REACT_APP_MY_ENV_MAPBOX_TOKEN}
+        mapboxApiAccessToken={MAPBOX_TOKEN}
       >
         <GeolocateControl
           positionOptions={{ enableHighAccuracy: true }}
@@ -82,17 +83,11 @@ const Map = () => {
         />
         <Directions
           mapRef={mapRef}
-          mapboxApiAccessToken={REACT_APP_MY_ENV_MAPBOX_TOKEN}
+          mapboxApiAccessToken={MAPBOX_TOKEN}
           placeholderOrigin="Your current Location"
           placeholderDestination="Your Destination"
           position="top-left"
         />
-        {exampleArray.map((location) => (
-          <Marker latitude={location.latitude} longitude={location.longitude}>
-            <FiFlag style={{ color: 'red' }} />
-            {/* <img src="https://amigosforkids.org/wp-content/themes/amigos2018/img/general/logo-color.png" alt="marker" /> */}
-          </Marker>
-        ))}
       </ReactMapGL>
     </div>
   );

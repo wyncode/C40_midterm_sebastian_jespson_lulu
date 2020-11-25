@@ -1,15 +1,7 @@
 import React from 'react';
-import './components/GiftResult.css';
 import MiamiDriveMap from './Map/MiamiDriveMap';
 
-//item.charityName,
-//item.webddress.streetAddress1
-//item.mailingAdsiteURL(most of them are null)
-//item.mailingAdress.city
-//item.mailingAddress.stateOrProvince
-//item.mailingAddress.postalCode
-
-const DonateResult = () => {
+const GiftResult = () => {
   return (
     <div>
       <div class="container">
@@ -62,4 +54,4 @@ const DonateResult = () => {
   );
 };
 
-export default DonateResult;
+export default GiftResult;
