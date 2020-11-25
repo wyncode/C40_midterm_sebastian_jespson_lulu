@@ -30,13 +30,13 @@ app.get('/charitysearch', async (request, response) => {
     //response.send(charityList);
     response.json({ data: charityList.data });
   } catch (error) {
-    console.log(error);
+    console.log(error.message);
   }
 });
 
 //get charity address and pass through geolocation api
 app.get('/mapboxapi', (req, res) => {
-  axios.get();
+  res.json(process.env.MAPBOX_TOKEN);
 });
 
 // END DEMO

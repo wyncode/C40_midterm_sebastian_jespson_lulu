@@ -9,9 +9,6 @@ import { FiFlag } from 'react-icons/fi';
 import Directions from 'react-map-gl-directions';
 import { AppContext } from '../../context/AppContext';
 
-const MAPBOX_TOKEN =
-  'pk.eyJ1IjoiamVzcDk2IiwiYSI6ImNraHJ2b3R1NzA3MGkyd210NHQ0MTljaW0ifQ.qq4toWUDIFOZsw9xSf-6-g';
-
 const miamiToyArray = [
   {
     latitude: 25.70371,
@@ -36,7 +33,7 @@ const miamiToyArray = [
 ];
 
 const Map = () => {
-  const { charities } = useContext(AppContext);
+  const { charities, token } = useContext(AppContext);
   //set the state and the viewport to change
   const [viewport, setViewport] = useState({
     latitude: 25.7617,
@@ -72,7 +69,7 @@ const Map = () => {
         width="50%"
         height="75%"
         onViewportChange={handleViewportChange}
-        mapboxApiAccessToken={MAPBOX_TOKEN}
+        mapboxApiAccessToken={token}
       >
         <GeolocateControl
           positionOptions={{ enableHighAccuracy: true }}
@@ -80,7 +77,7 @@ const Map = () => {
         />
         <Directions
           mapRef={mapRef}
-          mapboxApiAccessToken={MAPBOX_TOKEN}
+          mapboxApiAccessToken={token}
           placeholderOrigin="Your current Location"
           placeholderDestination="Your Destination"
           position="top-left"
