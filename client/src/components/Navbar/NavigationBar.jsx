@@ -3,7 +3,7 @@ import './Navbar.css';
 import { Link } from 'react-router-dom';
 import { NONAME } from 'dns';
 
-const Navbar = () => {
+const Navigationbar = () => {
   const navStyle = {
     color: 'white'
   };
@@ -29,4 +29,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navigationbar;

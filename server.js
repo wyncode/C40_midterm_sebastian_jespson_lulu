@@ -9,6 +9,8 @@ const axios = require('axios');
 const { request } = require('http');
 const { response } = require('express');
 
+const { MAPBOX_TOKEN } = process.env;
+
 // JUST FOR DEMO PURPOSES, PUT YOUR ACTUAL API CODE HERE
 
 ///function to pass address to geolocation api
