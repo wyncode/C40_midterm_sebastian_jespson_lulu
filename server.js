@@ -36,7 +36,6 @@ app.get('/charitysearch', async (request, response) => {
 
 //get charity address and pass through geolocation api
 app.get('/mapboxapi', (req, res) => {
-  console.log(process.env.MAPBOX_TOKEN);
   res.json(process.env.MAPBOX_TOKEN);
 });
 

@@ -36,7 +36,7 @@ const Map = () => {
     // await response of fetch call
     let response = await charities.map((charity) => {
       fetch(
-        `https://api.mapbox.com/geocoding/v5/mapbox.places/${charity.fullAddress}.json?access_token=pk.eyJ1IjoiamVzcDk2IiwiYSI6ImNraHJ2b3R1NzA3MGkyd210NHQ0MTljaW0ifQ.qq4toWUDIFOZsw9xSf-6-g`
+        `https://api.mapbox.com/geocoding/v5/mapbox.places/${charity.fullAddress}.json?access_token=${token}`
       );
     });
     // only proceed once promise is resolved
