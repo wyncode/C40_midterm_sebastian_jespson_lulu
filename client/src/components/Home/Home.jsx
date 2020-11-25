@@ -1,17 +1,13 @@
 import React from 'react';
 import './Home.css';
-import Navbar from '../Navbar/Navbar';
-// import Showcase from '../Showcase/Showcase';
-import DonateForm from '../DonateForm/DonateForm';
-import GiftToyForm from '../GiftToyForm/GiftToyForm';
+import Showcase from '../Showcase/Showcase';
+import AllForms from '../Form/allForms';
 
 const Home = () => {
   return (
-    <div>
-      <Navbar />
-      {/* <Showcase /> */}
-      <DonateForm />
-      <GiftToyForm />
+    <div className="home">
+      <Showcase />
+      <AllForms />
     </div>
   );
 };

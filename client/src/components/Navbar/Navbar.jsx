@@ -10,9 +10,12 @@ const Navbar = () => {
     <Router>
       <div>
         <ul className="navbar">
-          <li>
+          <link to="#" className="menu-bars">
+            <FaIcons.AiOutlineBars />
+          </link>
+          <link>
             <Link to="/">Home</Link>
-          </li>
+          </link>
           <li>
             <Link to="/about">About</Link>
           </li>
