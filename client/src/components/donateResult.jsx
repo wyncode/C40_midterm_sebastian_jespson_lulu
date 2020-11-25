@@ -9,16 +9,17 @@ import Map from './Map/map';
 //item.mailingAddress.stateOrProvince
 //item.mailingAddress.postalCode
 
-const Showcase = () => {
+const DonateResult = () => {
   const { charities } = useContext(AppContext);
-
+  console.log('object');
+  console.log(charities);
   const [address, setAddress] = useState();
 
   if (!charities) return null;
   return (
     <div>
       {charities &&
-        charities.map((charity) => {
+        charities?.map((charity) => {
           console.log(charity);
           return (
             <div key={charity.ein}>
@@ -36,4 +37,4 @@ const Showcase = () => {
   );
 };
 
-export default Showcase;
+export default DonateResult;
