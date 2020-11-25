@@ -10,7 +10,7 @@ h1 {
 
 .hero {
   background-image: radial-gradient(50% 176%, #253854 80%, #061922 100%);
-  // minsq-height: 100vh;
+  min-height: 100vh;
   min-height: 30rem;
   position: relative;
   overflow: hidden;
@@ -18,11 +18,10 @@ h1 {
   justify-content: center;
   align-content: center;
 
-  &__content {
-    position: relative;
-    align-self: center;
-    padding: 3rem 0;
-  }
+  /* &__content { */
+  position: relative;
+  align-self: center;
+  padding: 3rem 0;
 }
 
 .snow {
