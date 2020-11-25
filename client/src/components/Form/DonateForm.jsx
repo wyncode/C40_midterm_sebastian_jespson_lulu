@@ -4,6 +4,7 @@ import axios from 'axios';
 import { AppContext } from '../../context/AppContext';
 import { useHistory } from 'react-router-dom';
 import './Form.css';
+import GiftBoxToy from '../Resources/GiftBox Toy/GiftBoxToy';
 
 function DonateForm() {
   const history = useHistory();
@@ -12,9 +13,7 @@ function DonateForm() {
   const [zip, setZip] = useState('');
   const { setCharities } = useContext(AppContext);
   const { register, errors } = useForm();
-  const onSubmit = (data) => {
-    //code here what to do with data
-  };
+
   const searchApi = async () => {
     try {
       const response = await axios.get(
@@ -52,39 +51,42 @@ function DonateForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        id="state"
-        name="state"
-        ref={register({ required: 'STATE REQUIRED' })}
-        onChange={stateChange}
-      />
-      <br></br>
-      {errors.state && <p>{errors.state.message}</p>}
-      <br></br>
-      <input
-        type="text"
-        id="city"
-        name="city"
-        ref={register({ required: 'CITY REQUIRED' })}
-        onChange={cityChange}
-      />
-      <br></br>
-      {errors.county && <p>{errors.county.message}</p>}
-      <br></br>
-      <input
-        type="text"
-        id="zip"
-        name="zip"
-        ref={register({ required: 'ZIP REQUIRED' })}
-        onChange={zipChange}
-      />
-      <br></br>
-      {errors.county && <p>{errors.county.message}</p>}
-      <br></br>
-      <input type="submit" id="submit" />
-    </form>
+    <div>
+      <GiftBoxToy />
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          id="state"
+          name="state"
+          ref={register({ required: 'STATE REQUIRED' })}
+          onChange={stateChange}
+        />
+        <br></br>
+        {errors.state && <p>{errors.state.message}</p>}
+        <br></br>
+        <input
+          type="text"
+          id="city"
+          name="city"
+          ref={register({ required: 'CITY REQUIRED' })}
+          onChange={cityChange}
+        />
+        <br></br>
+        {errors.county && <p>{errors.county.message}</p>}
+        <br></br>
+        <input
+          type="text"
+          id="zip"
+          name="zip"
+          ref={register({ required: 'ZIP REQUIRED' })}
+          onChange={zipChange}
+        />
+        <br></br>
+        {errors.county && <p>{errors.county.message}</p>}
+        <br></br>
+        <input type="submit" id="submit" />
+      </form>
+    </div>
   );
 }
 export default DonateForm;

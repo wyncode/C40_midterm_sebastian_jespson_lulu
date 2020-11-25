@@ -9,6 +9,8 @@ const axios = require('axios');
 const { request } = require('http');
 const { response } = require('express');
 
+const { MAPBOX_TOKEN } = process.env;
+
 // JUST FOR DEMO PURPOSES, PUT YOUR ACTUAL API CODE HERE
 
 ///function to pass address to geolocation api
@@ -28,13 +30,13 @@ app.get('/charitysearch', async (request, response) => {
     //response.send(charityList);
     response.json({ data: charityList.data });
   } catch (error) {
-    console.log(error);
+    console.log(error.message);
   }
 });
 
 //get charity address and pass through geolocation api
 app.get('/mapboxapi', (req, res) => {
-  axios.get();
+  res.json(process.env.MAPBOX_TOKEN);
 });
 
 // END DEMO
