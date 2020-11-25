@@ -1,7 +1,7 @@
 import React from 'react';
 import './Home.css';
 import Showcase from '../Showcase/Showcase';
-import AllForms from '../Form/allForms';
+import AllForms from '../Form/AllForms';
 
 const Home = () => {
   return (

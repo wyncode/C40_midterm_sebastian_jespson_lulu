@@ -13,7 +13,6 @@ const DonateResult = () => {
   const { charities } = useContext(AppContext);
   console.log('object');
   console.log(charities);
-  const [address, setAddress] = useState();
 
   if (!charities) return null;
   return (

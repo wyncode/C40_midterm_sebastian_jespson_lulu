@@ -5,11 +5,33 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import React, { useState, useRef, useCallback, useContext } from 'react';
 import ReactMapGL, { GeolocateControl } from 'react-map-gl';
-import Geocoder from 'react-map-gl-geocoder';
 import Directions from 'react-map-gl-directions';
 import { AppContext } from '../../context/AppContext';
 
-const { REACT_APP_MY_ENV_MAPBOX_TOKEN, NODE_ENV } = process.env;
+const { REACT_APP_MY_ENV, NODE_ENV } = process.env;
+
+const miamiToyArray = [
+  {
+    latitude: 25.70371,
+    longitude: -80.028861
+  },
+  {
+    latitude: 25.76508,
+    longitude: -80.25233
+  },
+  {
+    latitude: 25.76437,
+    longitude: -80.25387
+  },
+  {
+    latitude: 25.3279,
+    longitude: -80.33458
+  },
+  {
+    latitude: 25.68569,
+    longitude: -80.36601
+  }
+];
 
 const Map = () => {
   const { charities } = useContext(AppContext);
@@ -25,31 +47,6 @@ const Map = () => {
     (newViewport) => setViewport(newViewport),
     []
   );
-
-  async function fetchCharityCoordinates() {
-    // await response of fetch call
-    let response = await charities.map((charity) => {
-      fetch(
-        `https://api.mapbox.com/geocoding/v5/mapbox.places/${charity.fullAddress}.json?access_token=pk.eyJ1IjoiamVzcDk2IiwiYSI6ImNraHJ2b3R1NzA3MGkyd210NHQ0MTljaW0ifQ.qq4toWUDIFOZsw9xSf-6-g`
-      );
-    });
-    // only proceed once promise is resolved
-    let data = await response.json();
-    // only proceed once second promise is resolved
-    console.log(data);
-  }
-
-  //
-  const fetchCharityCoordinateAPI = () => {
-    fetch(`https://data.cityofnewyork.us/resource/yjub-udmw.json`)
-      .then((res) => res.json())
-      .then() //map throgh it to get coordinate and pass thru geolocation
-      .then((hotspots) => {
-        this.setState({
-          wifiHotspots: hotspots
-        });
-      });
-  };
 
   // if you are happy with Geocoder default settings, you can just use handleViewportChange directly
   const handleGeocoderViewportChange = useCallback(
@@ -73,7 +70,7 @@ const Map = () => {
         width="50%"
         height="75%"
         onViewportChange={handleViewportChange}
-        mapboxApiAccessToken={REACT_APP_MY_ENV_MAPBOX_TOKEN}
+        mapboxApiAccessToken={MAPBOX_TOKEN}
       >
         <GeolocateControl
           positionOptions={{ enableHighAccuracy: true }}
@@ -81,11 +78,17 @@ const Map = () => {
         />
         <Directions
           mapRef={mapRef}
-          mapboxApiAccessToken={REACT_APP_MY_ENV_MAPBOX_TOKEN}
+          mapboxApiAccessToken={MAPBOX_TOKEN}
           placeholderOrigin="Your current Location"
           placeholderDestination="Your Destination"
           position="top-left"
         />
+        {miamiToyArray.map((location) => (
+          <Marker latitude={location.latitude} longitude={location.longitude}>
+            <FiFlag style={{ color: 'green' }} />
+            {/* <img src="https://amigosforkids.org/wp-content/themes/amigos2018/img/general/logo-color.png" alt="marker" /> */}
+          </Marker>
+        ))}
       </ReactMapGL>
     </div>
   );

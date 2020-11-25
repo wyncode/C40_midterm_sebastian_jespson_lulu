@@ -1,6 +1,13 @@
 import React from 'react';
-import './Showcase.css';
 
 export default function Showcase() {
-  return <h1>Welcome to the Holiday Toy Hub</h1>;
+  return (
+    <div>
+      <h1>Welcome to the Holiday Toy Hub</h1>
+      <p>
+        whereno kid in Miami goes without a toy during the holiday season of the
+        COVID-19 Pandemic
+      </p>
+    </div>
+  );
 }
