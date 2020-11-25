@@ -3,18 +3,22 @@ import 'react-map-gl-directions/dist/mapbox-gl-directions.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
 //this get's the search bar
 import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
-import React, { useState, useRef, useCallback, useContext } from 'react';
+import React, {
+  useState,
+  useRef,
+  useCallback,
+  useContext,
+  useEffect
+} from 'react';
 import ReactMapGL, { GeolocateControl, Marker } from 'react-map-gl';
 import { FiFlag } from 'react-icons/fi';
 import Geocoder from 'react-map-gl-geocoder';
 import Directions from 'react-map-gl-directions';
 import { AppContext } from '../../context/AppContext';
 
-const MAPBOX_TOKEN =
-  'pk.eyJ1IjoiamVzcDk2IiwiYSI6ImNraHJ2b3R1NzA3MGkyd210NHQ0MTljaW0ifQ.qq4toWUDIFOZsw9xSf-6-g';
-
 const Map = () => {
-  const { charities } = useContext(AppContext);
+  const { charities, token } = useContext(AppContext);
+
   //set the state and the viewport to change
   const [viewport, setViewport] = useState({
     latitude: 25.7617,
@@ -69,26 +73,28 @@ const Map = () => {
 
   return (
     <div style={{ height: '100vh' }}>
-      <ReactMapGL
-        ref={mapRef}
-        {...viewport}
-        width="50%"
-        height="75%"
-        onViewportChange={handleViewportChange}
-        mapboxApiAccessToken={MAPBOX_TOKEN}
-      >
-        <GeolocateControl
-          positionOptions={{ enableHighAccuracy: true }}
-          trackUserLocation={true}
-        />
-        <Directions
-          mapRef={mapRef}
-          mapboxApiAccessToken={MAPBOX_TOKEN}
-          placeholderOrigin="Your current Location"
-          placeholderDestination="Your Destination"
-          position="top-left"
-        />
-      </ReactMapGL>
+      {token && (
+        <ReactMapGL
+          ref={mapRef}
+          {...viewport}
+          width="50%"
+          height="75%"
+          onViewportChange={handleViewportChange}
+          mapboxApiAccessToken={token}
+        >
+          <GeolocateControl
+            positionOptions={{ enableHighAccuracy: true }}
+            trackUserLocation={true}
+          />
+          <Directions
+            mapRef={mapRef}
+            mapboxApiAccessToken={token}
+            placeholderOrigin="Your current Location"
+            placeholderDestination="Your Destination"
+            position="top-left"
+          />
+        </ReactMapGL>
+      )}
     </div>
   );
 };
